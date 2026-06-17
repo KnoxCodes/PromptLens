@@ -80,7 +80,7 @@ PromptLens/
 ### 1 — Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/PromptLens.git
+git clone https://github.com/KnoxCodes/PromptLens.git
 cd PromptLens
 ```
 
@@ -216,31 +216,6 @@ The public link stays alive for ~12 hours per session.
 
 ---
 
-## 🤝 Contributing
-
-Contributions are very welcome! Here are some ideas for what to add:
-
-- [ ] **SD XL support** — SDXL has a different UNet architecture; cross-attention hooking needs adaptation
-- [ ] **Video / animation mode** — generate a GIF showing attention evolving across denoising steps
-- [ ] **Token merging visualization** — show how sub-word tokens map back to full words
-- [ ] **Negative prompt heatmap** — visualize which regions are suppressed by the negative prompt
-- [ ] **Batch comparison mode** — same prompt, different seeds, side-by-side attention maps
-
-### How to contribute
-
-```bash
-# Fork → clone your fork
-git clone https://github.com/YOUR_USERNAME/PromptLens.git
-
-# Create a feature branch
-git checkout -b feature/sdxl-support
-
-# Make your changes, then open a PR against main
-```
-
-Please keep PRs focused — one feature or fix per PR makes review much easier.
-
----
 
 ## 📄 License
 
