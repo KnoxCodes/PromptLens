@@ -225,7 +225,7 @@ MIT — see [LICENSE](LICENSE). Use it, fork it, build on it.
 
 <div align="center">
 
-Built with 🔥 by [YOUR_NAME](https://github.com/YOUR_USERNAME)
+Built with 🔥 by [Knox](https://github.com/KnoxCodes)
 
 *If PromptLens helped you understand your prompts better, consider giving it a ⭐*
 
