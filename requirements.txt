@@ -1,0 +1,24 @@
+# PromptLens — requirements.txt
+# Install with: pip install -r requirements.txt
+
+# Core ML
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Diffusion models
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+
+# Image processing
+Pillow>=9.0.0
+numpy>=1.24.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# UI
+gradio>=4.20.0
+
+# Utilities
+safetensors>=0.4.0
