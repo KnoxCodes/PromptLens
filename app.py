@@ -1,9 +1,3 @@
-"""
-app.py  —  PromptLens · Gradio UI
-------------------------------------------
-Run in Colab / Kaggle:
-    !python app.py
-"""
 
 import matplotlib
 matplotlib.use("Agg")

@@ -1,18 +1,3 @@
-"""
-heatmap_generator.py
---------------------
-Load once, run as many prompts as you want.
-
-Usage:
-    from heatmap_generator import HeatmapGenerator
-
-    gen = HeatmapGenerator()
-    result = gen.run("a golden retriever playing in the snow")
-    result.show()                  # word view (top 10)
-    result.show_pos()              # POS view
-    result.save("out/")
-"""
-
 import gc
 import io
 import sys
@@ -34,10 +19,6 @@ from PIL import Image
 from diffusers import StableDiffusionPipeline, StableDiffusionXLPipeline
 from diffusers.models.attention_processor import Attention
 
-
-# ─────────────────────────────────────────────────────────────
-#  POS constants
-# ─────────────────────────────────────────────────────────────
 
 # Fine-grained spacy tag → broad readable category
 _BROAD_POS = {
@@ -65,10 +46,6 @@ _POS_COLORS = {
     'Numbers':     '#EAB308',   # yellow
     'Other':       '#94A3B8',   # slate
 }
-
-# ─────────────────────────────────────────────────────────────
-#  Lazy spacy loader
-# ─────────────────────────────────────────────────────────────
 
 _nlp = None
 
@@ -116,11 +93,6 @@ def _match_broad(word: str, pm: dict) -> str:
         if w in key or key in w:
             return val
     return 'Other'
-
-
-# ─────────────────────────────────────────────────────────────
-#  Custom attention processor (captures cross-attention weights)
-# ─────────────────────────────────────────────────────────────
 
 class _CapturingProcessor:
     def __init__(self, store, layer_name):
@@ -184,9 +156,6 @@ class _CapturingProcessor:
         return hidden_states
 
 
-# ─────────────────────────────────────────────────────────────
-#  Attention store
-# ─────────────────────────────────────────────────────────────
 
 class _AttentionStore:
     def __init__(self, capture_last_n, total_steps):
@@ -238,9 +207,6 @@ class _AttentionStore:
         return ((avg - mn) / (mx - mn + 1e-8)).numpy()   # (tokens, 64, 64)
 
 
-# ─────────────────────────────────────────────────────────────
-#  Result dataclass  —  all plots live here
-# ─────────────────────────────────────────────────────────────
 
 _SPECIAL = {"<|startoftext|>", "<|endoftext|>", "<pad>"}
 
@@ -583,9 +549,6 @@ class HeatmapResult:
         return paths
 
 
-# ─────────────────────────────────────────────────────────────
-#  Main class
-# ─────────────────────────────────────────────────────────────
 
 class HeatmapGenerator:
     """
