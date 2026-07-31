@@ -273,7 +273,7 @@ MIT — see [LICENSE](LICENSE). Use it, fork it, build on it.
 
 <div align="center">
 
-Built with 🔥 by [Knox](https://github.com/KnoxCodes)
+Built with 🔥 by [Shiv](https://github.com/shiv-ml)
 
 *If PromptLens helped you understand your prompts better, consider giving it a ⭐*
 
